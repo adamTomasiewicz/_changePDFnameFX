@@ -1,0 +1,127 @@
+package reactor;
+
+
+import java.awt.event.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
+import javax.swing.JOptionPane;
+
+
+public class App4 {
+	public static void main(String[] args) {
+	
+		JFrame f = new JFrame("App4");
+		JOptionPane op = new JOptionPane();
+		int c = f.getDefaultCloseOperation();
+		f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        JLabel lbl1 = new JLabel("imię");
+        JLabel lbl2 = new JLabel("nazwisko");
+        JLabel lbl3 = new JLabel("stanowisko");
+        JLabel lbl4 = new JLabel("e-mail");
+        JLabel lbl5 = new JLabel("Jakie znasz języki programowania?");
+        JLabel lbl6 = new JLabel("Wybierz poziom języka angielskiego?");
+        JLabel lbl7 = new JLabel("Wybierz kurs programowania?");
+        JTextField tf1 = new JTextField("Adam");
+        JTextField tf2 = new JTextField("Tomasiewicz");
+        JTextField tf3 = new JTextField("Developer");
+        JTextField tf4 = new JTextField("adam.tomasiewicz@outlook.com");
+        JButton btn1 = new JButton("Wypisz");
+        JButton btn2 = new JButton("Wyjdz");
+        JCheckBox chbx1 = new JCheckBox("Java");
+        JCheckBox chbx2 = new JCheckBox("Python");
+        JCheckBox chbx3 = new JCheckBox("inne");
+        JRadioButton rbtn1 = new JRadioButton("podstawowy");
+        JRadioButton rbtn2 = new JRadioButton("średnio-zaawansowany");
+        JRadioButton rbtn3 = new JRadioButton("zaawansowany");
+        ButtonGroup bg1 = new ButtonGroup();
+        bg1.add(rbtn1);bg1.add(rbtn2);bg1.add(rbtn3);
+        String[] kurs = new String[] {"Back-end Developer", "Front-end Developer"};
+        JComboBox<String> cmbx1 = new JComboBox<String>(kurs);
+        
+        JTextArea ta1 = new JTextArea("Wypełnij formularz");
+        
+
+ 
+        lbl1.setBounds(30, 40, 100, 20);
+        tf1.setBounds(30, 80, 100, 20);
+        lbl2.setBounds(30, 120, 100, 20);
+        tf2.setBounds(30, 160, 100, 20);
+        lbl3.setBounds(30, 200, 100, 20);
+        tf3.setBounds(30, 240, 100, 20);
+        lbl4.setBounds(30, 280, 100, 20);
+        tf4.setBounds(30, 320, 100, 20);
+        btn1.setBounds(30, 440, 100, 20);
+        btn2.setBounds(240, 440, 100, 20);
+        lbl5.setBounds(300, 30, 300, 20);
+        chbx1.setBounds(300, 50, 200, 20);
+        chbx2.setBounds(300, 70, 200, 20);
+        chbx3.setBounds(300, 90, 200, 20);
+        lbl6.setBounds(300, 160, 300, 20);
+        rbtn1.setBounds(300,180,200,20); 
+        rbtn2.setBounds(300,200,200,20); 
+        rbtn3.setBounds(300,220,200,20); 
+        lbl7.setBounds(300, 280, 200, 20);
+        cmbx1.setBounds(300, 300, 200, 20);
+        ta1.setBounds(600, 30, 350, 200);
+        
+        
+        
+btn1.addActionListener(new ActionListener(){
+	public void actionPerformed(ActionEvent e){
+				ta1.setText("Dane kontaktowe:\n");
+                String imię = tf1.getText();
+                String nazwisko = tf2.getText();
+                String stanowisko = tf3.getText();
+                String email = tf4.getText();
+                ta1.append(imię + " " + nazwisko + " (" + stanowisko + ") " + email + "\n\n");
+                ta1.append("Informacje zawodowe:\n");
+                
+                if(chbx1.isSelected()){ ta1.append("Java: tak\n"); }   
+                else { ta1.append("Java: nie\n"); }   
+    
+                if(chbx2.isSelected()){ ta1.append("Python: tak\n"); }   
+                else { ta1.append("Python: nie\n"); }    
+
+                if(chbx3.isSelected()){ ta1.append("inne: tak\n"); } 
+                else { ta1.append("inne: nie\n"); }   
+            
+                if(rbtn1.isSelected()){ ta1.append("Angielski: podstawowy\n\n"); } 
+                else if(rbtn2.isSelected()){ ; } 
+                else if(rbtn3.isSelected()){ ta1.append("Angielski: zaawansowany\n"); }
+                
+                ta1.append("\nWybrany kurs:\n");
+
+                String kurs = (String) cmbx1.getSelectedItem();
+                if(kurs.equals("Back-end Developer")) { ta1.append("Back-end Developer"); }	
+                else if(kurs.equals("Front-end Developer")) { ta1.append("Front-end Developer"); }
+               
+            }
+        });   
+
+
+btn2.addActionListener(new ActionListener(){
+	public void actionPerformed(ActionEvent e){
+		//op.displayMessage("WindowListener method called: windowActivated.");
+		JOptionPane.showMessageDialog(f, "Pogratuluj!\nadam.tomasiewicz@outlook.com");
+		System.exit(0);
+		
+	  } });    
+        f.add(lbl1);f.add(lbl2);f.add(lbl3);f.add(lbl4);f.add(lbl5);f.add(lbl6);f.add(lbl7);
+        f.add(tf1);f.add(tf2);f.add(tf3);f.add(tf4);
+        f.add(btn1);f.add(btn2);
+        f.add(chbx1);f.add(chbx2);f.add(chbx3); 
+        f.add(rbtn1);f.add(rbtn2);f.add(rbtn3);
+        f.add(cmbx1);
+        f.add(ta1);
+        f.setSize(1000,550);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
