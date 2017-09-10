@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane opacity="0.50" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="changePDFnameFX.controllers.MainController">
+    <children>
+        <VBox prefHeight="800.0" prefWidth="1800.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File changed">
+                            <items>
+                        <RadioMenuItem mnemonicParsing="false" text="Unspecifidfsaafa" />
+                                <MenuItem fx:id="newExchangeItem" mnemonicParsing="false" onAction="#newExchange" text="new exchange" />
+                        <SeparatorMenuItem mnemonicParsing="false" text="fdsfs" />
+                                <MenuItem fx:id="closeItem" mnemonicParsing="false" onAction="#exit" text="exit" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            <Canvas height="275.0" width="217.0" />
+            <Group />
+            </children>
+        </VBox>
+    </children>
+</StackPane>
